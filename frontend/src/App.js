@@ -57,7 +57,7 @@ function App() {
       setError("");
       const start = performance.now();
 
-      const res = await axios.post("http://localhost:5000/generate-obst", {
+      const res = await axios.post("https://obst-project-backend.onrender.com/", {
         keys: keys.split(",").map((x) => Number(x.trim())),
         freq: freq.split(",").map((x) => Number(x.trim())),
       });
@@ -97,7 +97,7 @@ function App() {
       setKeys(sortedKeys.join(","));
       setFreq(sortedFreq.join(","));
 
-      const res = await axios.post("http://localhost:5000/generate-obst", {
+      const res = await axios.post("https://obst-project-backend.onrender.com/", {
         keys: sortedKeys,
         freq: sortedFreq,
       });
@@ -234,7 +234,10 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Optimal BST Visualizer - Advanced</h1>
+      <div className="hero">
+  <h1>Optimal BST Visualizer</h1>
+  <p> Dynamic Programming Tree Construction & Search Analysis</p>
+</div>
 
       <div className="tabs">
         <button onClick={() => setActiveTab("input")}>Input</button>
