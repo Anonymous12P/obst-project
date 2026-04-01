@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { spawn } = require("child_process");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
 app.use(cors());
