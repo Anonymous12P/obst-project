@@ -57,7 +57,7 @@ function App() {
       setError("");
       const start = performance.now();
 
-      const res = await axios.post("https://obst-project-backend.onrender.com/", {
+      const res = await axios.post("https://obst-project-backend.onrender.com/generate-obst", {
         keys: keys.split(",").map((x) => Number(x.trim())),
         freq: freq.split(",").map((x) => Number(x.trim())),
       });
