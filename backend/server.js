@@ -5,7 +5,13 @@ const path = require("path");
 
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://obst-project.vercel.app",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 app.use(express.json());
 
 app.post("/generate-obst", (req, res) => {
